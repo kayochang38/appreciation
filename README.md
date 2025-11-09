@@ -36,9 +36,13 @@ Google Apps Script や PHP 不要
 
 🪶 ファイル構成
 project-root/
+
 ├── index.html
+
 ├── style.css
+
 └── app.js
+
 
 🚀 使い方
 

@@ -9,20 +9,32 @@ window.addEventListener("DOMContentLoaded",()=>{
 });
 
 /* === 必須項目チェック === */
-const required = ["#date","#title","#mainThought","#block-1 .interpret","#question"];
-required.forEach(id=>{
-  const base = id.split(" ")[0];
-  const el = $(base);
-  if(el) el.addEventListener("input", checkRequired);
-});
-function checkRequired(){
-  const filled = required.every(sel=>{
-    const base = sel.split(" ")[0];
-    const el = $(base);
-    return el && el.value.trim().length>0;
+window.addEventListener("DOMContentLoaded", () => {
+  const required = [
+    "#date",
+    "#title",
+    "#mainThought",
+    "#block-1 .interpret",
+    "#block-1 .feeling",
+    "#question"
+  ];
+
+  required.forEach(sel => {
+    const el = $(sel);
+    if (el) el.addEventListener("input", checkRequired);
   });
-  $("#saveBtn").disabled = !filled;
-}
+
+  function checkRequired() {
+    const filled = required.every(sel => {
+      const el = $(sel);
+      return el && el.value.trim().length > 0;
+    });
+    $("#saveBtn").disabled = !filled;
+  }
+
+  // ← ここで初期チェックを一度呼ぶのも重要
+  checkRequired();
+});
 
 /* === 保存 === */
 $("#saveBtn").addEventListener("click",()=>{

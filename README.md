@@ -48,8 +48,8 @@ project-root/
 
 このリポジトリをクローンまたは ZIP でダウンロード
 
-git clone https://github.com/yourname/kansho-note.git
-cd kansho-note
+git clone https://github.com/kayochang38/appreciation.git
+cd appreciation
 
 
 index.html をブラウザで開く

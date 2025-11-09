@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>鑑賞ノート</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="app-header">
+      <h1>鑑賞ノート</h1>
+      <button id="clearBtn" class="clear-top">クリア</button>
+    </header>
+
+    <!-- 日付＋タイトル固定エリア -->
+    <div class="title-area">
+      <label class="block">
+        <span class="label">日付</span>
+        <input id="date" type="date">
+      </label>
+
+      <label class="block">
+        <span class="label">タイトル</span>
+        <input id="title" type="text" placeholder="作品タイトルを入力">
+      </label>
+    </div>
+
+    <label class="block">
+      <span class="label">感想（面白かったシーンについて具体的に）</span>
+      <textarea id="mainThought" rows="4"></textarea>
+    </label>
+
+    <section class="cards">
+      <!-- 考察ブロック1 -->
+      <details class="card" id="block-1" open>
+        <summary>考察1</summary>
+        <div class="inner">
+          <label>技</label>
+          <select class="tech">
+            <option>比較</option><option>抽象</option><option>発見</option><option>流行</option><option>不易</option>
+          </select>
+          <label>解釈</label>
+          <textarea class="interpret" rows="2"></textarea>
+          <label>感想</label>
+          <textarea class="feeling" rows="2"></textarea>
+        </div>
+      </details>
+      <!-- 考察2〜5 -->
+      <details class="card" id="block-2"><summary>考察2</summary><div class="inner">
+        <label>技</label><select class="tech"><option>比較</option><option>抽象</option><option>発見</option><option>流行</option><option>不易</option></select>
+        <label>解釈</label><textarea class="interpret" rows="2"></textarea>
+        <label>感想</label><textarea class="feeling" rows="2"></textarea>
+      </div></details>
+      <details class="card" id="block-3"><summary>考察3</summary><div class="inner">
+        <label>技</label><select class="tech"><option>比較</option><option>抽象</option><option>発見</option><option>流行</option><option>不易</option></select>
+        <label>解釈</label><textarea class="interpret" rows="2"></textarea>
+        <label>感想</label><textarea class="feeling" rows="2"></textarea>
+      </div></details>
+      <details class="card" id="block-4"><summary>考察4</summary><div class="inner">
+        <label>技</label><select class="tech"><option>比較</option><option>抽象</option><option>発見</option><option>流行</option><option>不易</option></select>
+        <label>解釈</label><textarea class="interpret" rows="2"></textarea>
+        <label>感想</label><textarea class="feeling" rows="2"></textarea>
+      </div></details>
+      <details class="card" id="block-5"><summary>考察5</summary><div class="inner">
+        <label>技</label><select class="tech"><option>比較</option><option>抽象</option><option>発見</option><option>流行</option><option>不易</option></select>
+        <label>解釈</label><textarea class="interpret" rows="2"></textarea>
+        <label>感想</label><textarea class="feeling" rows="2"></textarea>
+      </div></details>
+    </section>
+
+    <label class="block">
+      <span class="label">質問</span>
+      <textarea id="question" rows="3"></textarea>
+    </label>
+
+    <button id="saveBtn" class="primary" disabled>保存</button>
+
+    <p class="credit">
+      三宅香帆さんの著書
+      <a href="https://amzn.to/4nRKIeF" target="_blank" rel="noopener noreferrer">
+        『話が面白い人」は何をどう読んでいるのか』
+      </a>
+      で紹介されている<br>「5つの技」メモ術をアプリとして実験的に再現しました。
+    </p>
+
+    <details class="records">
+      <summary>鑑賞ノート一覧</summary>
+      <input id="searchInput" type="text" placeholder="キーワードで検索…" class="search-bar">
+      <ul id="noteList"></ul>
+    </details>
+
+    <output id="toast" role="status" aria-live="polite"></output>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
